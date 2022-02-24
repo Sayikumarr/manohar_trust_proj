@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9s@zjj1wn*6&m6+v$#!5@o1(1=cx3$+y=%sdev27#jetu6a%-v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://manohar-trust.herokuapp.com/']
+ALLOWED_HOSTS = ['https://manohar-trust.herokuapp.com','manohartrust.org','manohar-trust.herokuapp.com','https://manohartrust.org','127.0.0.1']
 
 
 # Application definition
