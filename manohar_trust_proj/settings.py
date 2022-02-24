@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'manohar_trust_proj.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -90,14 +90,14 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'manobxbu_manohar_trust',
-        'HOST':'localhost',
+        'NAME': 'manohar_trust',
+        'HOST':'database-2.cf6kcwxleuyz.ap-south-1.rds.amazonaws.com',
         'PORT':'3306',
-        'USER':'manobxbu_manohar',
-        'PASSWORD':'Manohar@123',
+        'USER':'sayikumarr',
+        'PASSWORD':'saiabhi19',
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
