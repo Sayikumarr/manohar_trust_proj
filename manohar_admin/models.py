@@ -1,12 +1,5 @@
-import email
-from email.mime import image
-from tokenize import Name
-from turtle import position, tilt, title
 from django.db import models
-from django.contrib.auth.models import User
 from datetime import datetime
-from django.forms import ModelChoiceField
-from django.urls import reverse
 
 
 # Create your models here.
