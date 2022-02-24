@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block about %}is-active{% endblock about %}
+{% block content %} 
+
+    <div class="page-heading text-center">
+
+        <div class="container zoomIn animated">
+
+            <h1 class="page-title">ABOUT US <span class="title-under"></span></h1>
+            <p class="page-description">
+               <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit Necessitatibus.-->
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="main-container">
+
+        <div class="container">
+
+            <div class="row fadeIn animated">
+
+                <div class="col-md-6">
+
+                    <img src={% static "assets/images/about-us.jpg" %} alt="" class="img-responsive">
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h2 class="title-style-2">ABOUT Manohar Trust <span class="title-under"></span></h2>
+
+                    <p>
+                        <strong>Manohar Trust</strong> was founded in the year 2017 to contribute towards betterment of the society with a focus on hunger people, child education, holistic child development and women empowerment and to create awareness among youth by spreading quality thoughts to enlighten them.
+                    </p>
+
+                    <p>
+                        Our green planet is only one. We have one Creator, and we are said to be guardians of our own kind. Therefore, we must look after each other, care for each other, and love one another. There should be no discrimination against any race, gender, nationality, age and, most importantly, religion. We may be different but we are one
+
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi pariatur, voluptatum molestiae voluptas ducimus tempora numquam eligendi quos, quia aut quidem et, odio deleniti amet natus accusamus fugit! Temporibus, tenetur.
+                    </p>
+
+                    
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+            <div class="section-home about-us fadeIn animated">
+
+                <div >
+        
+                    <div class="row">
+        
+                        <div class="col-md-3 col-sm-6">
+        
+                            <div class="about-us-col">
+        
+                                <div class="col-icon-wrapper">
+                                    <img src={% static "assets/images/icons/our-mission-icon.png"%} alt="">
+                                </div>
+                                <h3 class="col-title">our mission</h3>
+                                <div class="col-details">
+        
+                                    <p>To create a Society where every Child is equipped with food, shelter, education......</p>
+        
+                                </div>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#ourmission"> Read more </a>
+        
+                            </div>
+        
+                        </div>
+        
+        
+                        <div class="col-md-3 col-sm-6">
+        
+                            <div class="about-us-col">
+        
+                                <div class="col-icon-wrapper">
+                                    <img src={% static "assets/images/icons/make-donation-icon.png"%} alt="">
+                                </div>
+                                <h3 class="col-title">Make donations</h3>
+                                <div class="col-details">
+        
+                                    <p>Lorem ipsum dolor sit amet consect adipisscin elit proin vel lectus ut eta esami vera dolor sit amet consect</p>
+        
+                                </div>
+                                <a href="#" class="btn btn-primary"> Read more </a>
+        
+                            </div>
+        
+                        </div>
+        
+        
+                        <div class="col-md-3 col-sm-6">
+        
+                            <div class="about-us-col">
+        
+                                <div class="col-icon-wrapper">
+                                    <img src={% static "assets/images/icons/help-icon.png"%} alt="">
+                                </div>
+                                <h3 class="col-title">VALUES</h3>
+                                <div class="col-details">
+        
+                                    <p> Respect for Human Rights...............</p>
+        
+                                </div>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#values"> Read more </a>
+        
+                            </div>
+        
+                        </div>
+        
+        
+                        <div class="col-md-3 col-sm-6">
+        
+                            <div class="about-us-col">
+        
+                                <div class="col-icon-wrapper">
+                                    <img src={% static "assets/images/icons/programs-icon.png"%} alt="">
+                                </div>
+                                <h3 class="col-title">OBJECTIVES</h3>
+                                <div class="col-details">
+        
+                                    <p>Development of Human Resources by spreading Quality Education..........</p>
+        
+                                </div>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#objectives"> Read more </a>
+        
+                            </div>
+        
+                        </div>
+        
+        
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+        </div>
+
+
+        <div class="our-team animate-onscroll fadeIn">
+
+            <div class="container">
+
+                <h2 class="title-style-1">Our Team <span class="title-under"></span></h2>
+
+                <div class="row">
+                    {% for mate in teammates %}
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <div class="team-member">
+
+                                <div class="thumnail">
+
+                                    <img src={{mate.image.url}} alt="" class="cause-img">
+
+                                </div>
+
+
+
+                                <h4 class="member-name"><a href="#">{{mate.name}}</a></h4>
+
+                                <div class="member-position">
+                                    {{mate.position}}
+                                </div>
+
+                                <div class="btn-holder">
+
+                                    <a href="mailto: {{mate.email}}" class="btn"> <i class="fa fa-envelope"></i> </a>
+                                    <a href="{{mate.facebook}}" class="btn"> <i class="fa fa-facebook"></i> </a>
+                                    <a href="mailto: {{mate.email}}" class="btn"> <i class="fa fa-google"></i> </a>
+                                    <a href="{{mate.twitter}}" class="btn"> <i class="fa fa-twitter"></i> </a>
+                                    <a href="{{mate.linkedin}}" class="btn"> <i class="fa fa-linkedin"></i> </a>
+
+                                </div>
+
+
+
+                            </div>
+                            <!-- /.team-member -->
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+
+        </div>
+
+    
+
+<!--this is read more tab-->
+<div class="modal fade" id="ourmission" tabindex="-1" role="dialog" aria-labelledby="ourmissionLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="ourmissionLabel">OUR MISSION</h4>
+            </div>
+            <div class="modal-body">
+
+                    <ul>
+                        <li>To create a Society where every Child is equipped with food, shelter, education and good health which is equipped with strong human relationships and safe environment.</li>
+
+                        <li>To Conduct Continuous food donations programs through tieups with various Orphanages etc.,</li>
+
+                        <li>To provide educational/Medical aid to underprivileged People.</li>
+                            
+                        <li>To conduct Marathons/Seminars for creating awareness on multiple social issues.</li>
+                    </ul>
+                    
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--objectives-->
+<div class="modal fade" id="objectives" tabindex="-1" role="dialog" aria-labelledby="objectiveslabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="objectiveslabel">OBJECTIVES</h4>
+            </div>
+            <div class="modal-body">
+
+                        <li> Development of Human Resources by spreading Quality Education.</li>
+
+                        <li>Creating Health Awareness among the youth by conducting Health Camps.</li>
+                            
+                        <li>The Trust acts as a bridge between needy and philanthropists and donors.</li>
+                        
+                        <li>The Trust strives to spread moral values among the youth.</li>
+                        
+                        <li>Tries to create environmental awareness in the youth.</li>
+                        
+                        <li>Motivates the students for better future.</li>
+                        
+                        <li>To encourage, inculcate and promote self-confidence and discipline among people for their career development for providing vocational training to generate self-employment.</li>
+                        
+                        <li>To award scholarships, stipends and distribution of books to such bright students coming from poor and disadvantaged families, from time to time as shall be decided by the trustees.</li>
+                        
+                        <li>To undertake, promote and coordinate programs of cultural, spiritual, leadership development, patriotism and national integration.</li>
+                    </ul>
+                    
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--Values-->
+<!--objectives-->
+<div class="modal fade" id="values" tabindex="-1" role="dialog" aria-labelledby="valueslabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="valueslabel">VALUES</h4>
+            </div>
+            <div class="modal-body">
+
+                        <li>Respect for Human Rights.</li>
+
+                        <li> Results and Responsiveness.</li>
+                            
+                        <li>Commitment and Can-Do Attitude.</li>
+                        
+                        <li>Transparency.</li>
+                        
+                        <li>Integrity.</li>
+                        
+                        <li>Accountability and Speed.</li>
+                        
+                       </ul>
+                    
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+    </div>
+
+    {% endblock %}
+
+    {% block script %} 
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src={% static "assets/js/jquery-1.11.1.min.js"%}><\/script>')
+        </script>
+
+        <!-- Bootsrap javascript file -->
+        <script src={% static "assets/js/bootstrap.min.js"%}></script>
+
+
+        <!-- Template main javascript -->
+        <script src={% static "assets/js/main.js"%}></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l;
+                b[l] || (b[l] =
+                    function() {
+                        (b[l].q = b[l].q || []).push(arguments)
+                    });
+                b[l].l = +new Date;
+                e = o.createElement(i);
+                r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-XXXXX-X');
+            ga('send', 'pageview');
+        </script>
+    {% endblock %}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+{% load static %}
+
+        {% block style %} {% endblock %}
+        <meta charset="utf-8">
+        <title>MANOHAR TRUST</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+        
+
+        <!-- Bootsrap -->
+        <link rel="stylesheet" href={% static "assets/css/bootstrap.min.css" %}>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href={% static "assets/css/font-awesome.min.css" %}>
+
+        <!-- Owl carousel -->
+        <link rel="stylesheet" href={% static "assets/css/owl.carousel.css" %}>
+
+        <!-- Template main Css -->
+        <link rel="stylesheet" href={% static "assets/css/style.css" %}>
+
+        <!-- Modernizr -->
+        <script src={% static "assets/js/modernizr-2.6.2.min.js" %}></script>
+       
+
+        <link rel="stylesheet" href={% static "assets/css/lightbox.min.css" %}>
+
+        {% block newcss %}{% endblock newcss %}
+
+    </head>
+
+<body>
+    
+    <header class="main-header">
+
+
+        <nav class="navbar navbar-static-top">
+
+            <div class="navbar-top">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-6 col-xs-12">
+
+                            <ul class="list-unstyled list-inline header-contact">
+                                <li> <i class="fa fa-phone"></i> <a href="tel:+919441550710">+91 9441550710 </a> </li>
+                                <li> <i class="fa fa-envelope"></i> <a href="mailto:team@manohartrust.org">team@manohartrust.org</a> </li>
+                            </ul>
+                            <!-- /.header-contact  -->
+
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 text-right">
+
+                            <ul class="list-unstyled list-inline header-social">
+
+                                <li>
+                                    <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-twitter"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-google"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-youtube"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa fa-pinterest-p"></i> </a>
+                                </li>
+                            </ul>
+                            <!-- /.header-social  -->
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-main">
+
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                  </button>
+
+                        <a class="navbar-brand" href="index.html"><span style="vertical-align: inherit;"><img src={% static "assets/images/logo.png"%} alt="" height="38">MANOHAR TRUST</span>
+                        </a>
+
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse pull-right">
+
+                        <ul class="nav navbar-nav">
+
+                            <li><a class="{% block home %}{% endblock home %}" href="\">HOME</a></li>
+                            <li><a class="{% block about %}{% endblock about %}" href="\about">ABOUT</a></li>
+                            <li class="has-child"><a class="{% block gallery %}{% endblock gallery %}" href="#">GALLERY</a>
+
+                                <ul class="submenu">
+                                    <li class="submenu-item"><a href="\mediacoverage">Media Coverage </a></li>
+                                    <li class="submenu-item"><a href="\gallery">Event pics </a></li>
+                                    <li class="submenu-item"><a href="\ytlist">YouTube Videos</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a class="{% block Programs %}{% endblock Programs %}" href="\overprog">Our Programs</a></li>
+                            <li><a class="{% block contact %}{% endblock contact %}" href="\contact">CONTACT</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!-- /#navbar -->
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.navbar-main -->
+
+
+        </nav>
+
+    </header>
+    <!-- /. main-header -->
+    {% block content %} {% endblock %}
+    <footer class="main-footer">
+
+        <div class="footer-top">
+
+        </div>
+        
+
+        <div class="footer-main">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+
+                                <p>
+                                    <strong>Manohar Trust</strong> was founded in the year 2017 to contribute towards betterment of the society with a focus on hunger people, child education, holistic child development and women empowerment and to create awareness among youth by spreading quality thoughts to enlighten them.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">social Media</span></h4>
+
+                            <div class="footer-content">
+                                <table class='table table-style-1 table-responsive'>
+                                    <tr>
+                                      <td><a  href="https://twitter.com/manohar_trust"><i class="bi bi-twitter"></i> Twitter</a></td>
+                                      <td><a  href="https://www.facebook.com/manohartrust"><i class="bi bi-facebook"></i> Facebook</a></td>
+                                      <td><a  href="https://www.youtube.com/channel/UCxpQOaRwJBQ3Ipko0g54VDQ"><i class="bi bi-youtube"></i> Youtube</a></td>
+                                    </tr>
+                                    <tr>
+                                      <td><a  href="https://in.linkedin.com/in/manohar-trust-46a6261a3"><i class="bi bi-linkedin"></i> Linkedin</a></td>
+                                      <td><a  href="https://www.instagram.com/manohartrust/"><i class="bi bi-instagram"></i> Instagram</a></td>
+                                     
+                                    </tr>
+                                  </table>
+
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <div class="footer-form">
+
+                                    <div class="footer-form">
+
+                                        <form action={% static "php/mail.php" %} class="ajax-form">
+
+                                            <div class="form-group">
+                                                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                            </div>
+
+                                            <div class="form-group alerts">
+
+                                                <div class="alert alert-success" role="alert">
+
+                                                </div>
+
+                                                <div class="alert alert-danger" role="alert">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="container text-right">
+                Manohar Trust @ 2022 <a href="http://www.instagram.com/sayikumarr/" target="_blank">Sayikumar developer</a>
+            </div>
+        </div>
+
+    </footer>
+    <!-- main-footer -->
+    {% block donate %} {% endblock donate %}
+    {% block script %} {% endblock %}
+</body>
+
+</html>

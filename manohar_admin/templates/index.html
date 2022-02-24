@@ -1,0 +1,614 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block home %}is-active{% endblock home %}
+    {% block content %} 
+    <!-- Carousel
+    ================================================== -->
+    <div id="homeCarousel" class="carousel slide carousel-home" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#homeCarousel" data-slide-to="0" class="active"> </li>
+            {% for post in posts %} 
+            <li data-target="#homeCarousel" data-slide-to="{{forloop.counter}}"> </li>
+            {% endfor %}
+        </ol>
+        
+        
+        <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+
+                <img src={% static "assets/images/slider/home-slider-1.jpg"%} alt="">
+
+                <div class="container">
+
+                    <div class="carousel-caption">
+
+                        <h2 class="carousel-title bounceInDown animated slow">Because they need your help</h2>
+                        <h4 class="carousel-subtitle bounceInUp animated slow ">Do not let them down</h4>
+                        <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow" data-toggle="modal" data-target="#donateModal">DONATE NOW</a>
+
+                    </div>
+                    <!-- /.carousel-caption -->
+
+                </div>
+
+            </div>
+            <!-- /.item -->
+
+        {% for post in posts %}
+            <div class="item ">
+
+                <img src={{post.image.url}} alt="">
+
+                <div class="container">
+
+                    <div class="carousel-caption">
+
+                        <h2 class="carousel-title bounceInDown animated slow">{{post.title}}</h2>
+                        <h4 class="carousel-subtitle bounceInUp animated slow">{{post.subtitle}}</h4>
+                        <a href="{{post.button_link}}" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated" >{{post.button_title}}</a>
+
+                    </div>
+                    <!-- /.carousel-caption -->
+
+                </div>
+
+            </div>
+            <!-- /.item -->
+        {% endfor %}
+
+
+
+            {% comment "" %}
+            <div class="item ">
+
+                <img src={% static "assets/images/slider/home-slider-3.jpg"%} alt="">
+
+                <div class="container">
+
+                    <div class="carousel-caption">
+
+                        <h2 class="carousel-title bounceInDown animated slow">A penny is a lot of money, if you have not got a penny.</h2>
+                        <h4 class="carousel-subtitle bounceInUp animated slow">You can make the diffrence !</h4>
+                        <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow" data-toggle="modal" data-target="#donateModal">DONATE NOW</a>
+
+                    </div>
+                    <!-- /.carousel-caption -->
+
+                </div>
+
+            </div>
+            <!-- /.item -->
+            {% endcomment %}
+
+        </div>
+
+        <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+    <!-- /.Events -->
+    {% for c in count %}
+    <section id="coronacases" class="dark_bg_blue layout_padding about-events">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="full">
+                        <div class="cause-title">
+
+                            <h4>{{c.events}}</h4>
+                            <p>Events</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="full">
+                        <div class="cause-title">
+
+                            <h4>{{c.volunteers}}+</h4>
+                            <p>Volunteers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="full">
+                        <div class="cause-title">
+                            <h4>{{c.sponsers}}</h4>
+                            <p>Sponsers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+
+    <div class="section-home about-us fadeIn animated">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src={% static "assets/images/icons/our-mission-icon.png"%} alt="">
+                        </div>
+                        <h3 class="col-title">our mission</h3>
+                        <div class="col-details">
+
+                            <p>To create a Society where every Child is equipped with food, shelter, education......</p>
+
+                        </div>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#ourmission"> Read more </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src={% static "assets/images/icons/make-donation-icon.png"%} alt="">
+                        </div>
+                        <h3 class="col-title">Make donations</h3>
+                        <div class="col-details">
+
+                            <p>Lorem ipsum dolor sit amet consect adipisscin elit proin vel lectus ut eta esami vera dolor sit amet consect</p>
+
+                        </div>
+                        <a href="#" class="btn btn-primary"> Read more </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src={% static "assets/images/icons/help-icon.png"%} alt="">
+                        </div>
+                        <h3 class="col-title">VALUES</h3>
+                        <div class="col-details">
+
+                            <p> Respect for Human Rights...............</p>
+
+                        </div>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#values"> Read more </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src={% static "assets/images/icons/programs-icon.png"%} alt="">
+                        </div>
+                        <h3 class="col-title">OBJECTIVES</h3>
+                        <div class="col-details">
+
+                            <p>Development of Human Resources by spreading Quality Education..........</p>
+
+                        </div>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#objectives"> Read more </a>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.about-us -->
+
+    <div class="section-home home-reasons">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="reasons-col animate-onscroll fadeIn">
+
+                        <img src={% static "assets/images/reasons/we-fight-togother.jpg"%} alt="">
+
+                        <div class="reasons-titles">
+
+                            <h3 class="reasons-title">We fight together</h3>
+                            <h5 class="reason-subtitle">We are humans</h5>
+
+                        </div>
+
+                        <div class="on-hover hidden-xs">
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium, itaque facilis nesciunt ab omnis cumque similique ipsa veritatis perspiciatis, harum ad at nihil molestias, dignissimos sint consequuntur. Officia,
+                                fuga.
+                            </p>
+
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium, itaque facilis nesciunt ab omnis cumque similique ipsa veritatis perspiciatis, harum ad at nihil molestias, dignissimos sint consequuntur. Officia,
+                                fuga.
+                            </p>
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium, itaque facilis nesciunt ab omnis cumque similique ipsa veritatis perspiciatis, harum ad at nihil molestias, dignissimos sint consequuntur. Officia,
+                                fuga.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="reasons-col animate-onscroll fadeIn">
+
+                        <img src={% static "assets/images/reasons/we-care-about.jpg"%} alt="">
+
+                        <div class="reasons-titles">
+
+                            <h3 class="reasons-title">WE care about others</h3>
+                            <h5 class="reason-subtitle">We are humans</h5>
+
+                        </div>
+
+                        <div class="on-hover hidden-xs">
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium, itaque facilis nesciunt ab omnis cumque similique ipsa veritatis perspiciatis, harum ad at nihil molestias, dignissimos sint consequuntur. Officia,
+                                fuga.
+                            </p>
+
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium, itaque facilis nesciunt ab omnis cumque similique ipsa veritatis perspiciatis, harum ad at nihil molestias, dignissimos sint consequuntur. Officia,
+                                fuga.
+                            </p>
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium, itaque facilis nesciunt ab omnis cumque similique ipsa veritatis perspiciatis, harum ad at nihil molestias, dignissimos sint consequuntur. Officia,
+                                fuga.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <!-- /.home-reasons -->
+
+    <div class="section-home our-causes animate-onscroll fadeIn">
+
+        <div class="container">
+
+            <new><h2 style="font-weight: bold;" class="text-center title-style-new">EVENT SCHEDULE</h2>
+            <p  class="text-center reason-subtitle" >Here is our event schedule</p>
+            <span class="title-under"></span><br></new>
+
+            <div class="container-fluid">
+                <h3 style="margin-top:-10px" class="text-center sub-heading">Join the hands to serve needy people. A little time of your's can Enlight other's life</h3>                
+                
+                    
+                        <div style="
+                            padding-top: 8px;
+                            padding-bottom: 8px;" class="card text-center sai-style">
+                            <div class="card-body">
+                            {% for event in events %}
+                            <h4 style="font-weight: bold;"><img height="38" src={% static "assets/images/logo.png"%} alt="">
+                            {{event.title}}<span class="pl-3"> {{event.area}}</span><br></h4>
+                            <h5 class="reason-subtitle">{{event.details}}</h5>
+                            <hr>
+                            
+                            {% endfor %}
+                        </div>
+                    </div>
+               
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.our-causes -->
+
+
+
+
+    {% comment "" %}
+    <!-- our-sponsors -->
+    <div class="section-home our-sponsors animate-onscroll fadeIn">
+
+        <div class="container">
+
+            <h2 class="title-style-1">Our Sponsors <span class="title-under"></span></h2>
+
+            <ul class="owl-carousel list-unstyled list-sponsors">
+
+                <li> <img src={% static "assets/images/sponsors/bus.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/wikimedia.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/one-world.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/wikiversity.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/united-nations.png"%} alt=""></li>
+
+                <li> <img src={% static "assets/images/sponsors/bus.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/wikimedia.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/one-world.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/wikiversity.png"%} alt=""></li>
+                <li> <img src={% static "assets/images/sponsors/united-nations.png"%} alt=""></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+    <!-- /.our-sponsors -->
+{% endcomment %}
+
+<!--this is read more tab-->
+<div class="modal fade" id="ourmission" tabindex="-1" role="dialog" aria-labelledby="ourmissionLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="ourmissionLabel">OUR MISSION</h4>
+            </div>
+            <div class="modal-body">
+
+                    <ul>
+                        <li>To create a Society where every Child is equipped with food, shelter, education and good health which is equipped with strong human relationships and safe environment.</li>
+
+                        <li>To Conduct Continuous food donations programs through tieups with various Orphanages etc.,</li>
+
+                        <li>To provide educational/Medical aid to underprivileged People.</li>
+                            
+                        <li>To conduct Marathons/Seminars for creating awareness on multiple social issues.</li>
+                    </ul>
+                    
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--objectives-->
+<div class="modal fade" id="objectives" tabindex="-1" role="dialog" aria-labelledby="objectiveslabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="objectiveslabel">OBJECTIVES</h4>
+            </div>
+                <div class="modal-body">
+                    <ul>
+                        <li> Development of Human Resources by spreading Quality Education.</li>
+
+                        <li>Creating Health Awareness among the youth by conducting Health Camps.</li>
+                            
+                        <li>The Trust acts as a bridge between needy and philanthropists and donors.</li>
+                        
+                        <li>The Trust strives to spread moral values among the youth.</li>
+                        
+                        <li>Tries to create environmental awareness in the youth.</li>
+                        
+                        <li>Motivates the students for better future.</li>
+                        
+                        <li>To encourage, inculcate and promote self-confidence and discipline among people for their career development for providing vocational training to generate self-employment.</li>
+                        
+                        <li>To award scholarships, stipends and distribution of books to such bright students coming from poor and disadvantaged families, from time to time as shall be decided by the trustees.</li>
+                        
+                        <li>To undertake, promote and coordinate programs of cultural, spiritual, leadership development, patriotism and national integration.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--Values-->
+<!--objectives-->
+<div class="modal fade" id="values" tabindex="-1" role="dialog" aria-labelledby="valueslabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="valueslabel">VALUES</h4>
+            </div>
+            <div class="modal-body">
+
+                        <li>Respect for Human Rights.</li>
+
+                        <li> Results and Responsiveness.</li>
+                            
+                        <li>Commitment and Can-Do Attitude.</li>
+                        
+                        <li>Transparency.</li>
+                        
+                        <li>Integrity.</li>
+                        
+                        <li>Accountability and Speed.</li>
+                        
+                       </ul>
+                    
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+    {% endblock %}
+
+ 
+
+
+
+{% block donate %}
+    <!-- Donate Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="donateModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="donateModalLabel">DONATE NOW</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-donation">
+
+                        <h3 class="title-style-1 text-center">Thank you for your donation <span class="title-under"></span> </h3>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12 ">
+                                <input type="text" class="form-control" id="amount" placeholder="AMOUNT(€)">
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="firstName" placeholder="First name*">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="lastName" placeholder="Last name*">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="email" placeholder="Email*">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" name="address" placeholder="Address">
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <textarea cols="30" rows="4" class="form-control" name="note" placeholder="Additional note"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right" name="donateNow">DONATE NOW</button>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- /.modal -->
+    {% endblock donate %}
+
+
+
+
+    {% block script %} 
+    <!--  Scripts
+    ================================================== -->
+
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src={% static "assets/js/jquery-1.11.1.min.js"%}><\/script>')
+    </script>
+
+    <!-- Bootsrap javascript file -->
+    <script src={% static "assets/js/bootstrap.min.js"%}></script>
+
+    <!-- owl carouseljavascript file -->
+    <script src={% static "assets/js/owl.carousel.min.js"%}></script>
+
+    <!-- Template main javascript -->
+    <script src={% static "assets/js/main.js"%}></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function() {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+
+    {% endblock %}

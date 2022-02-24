@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Programs %}is-active{% endblock Programs %}
+{% block content %} 
+
+    <div class="page-heading text-center">
+
+        <div class="container zoomIn animated">
+
+            <h1 class="page-title">Our Programs <span class="title-under"></span></h1>
+            <p class="page-description">
+                These are Some Programs Conducted by MANOHAR TRUST
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="main-container">
+
+        <div class="container">
+            {% for pro in programs %}
+                <div class="card card-body">
+
+                    <div class="col-md-12 fadeIn animated">
+
+                        <h1 class="page-title"><span class="sai-bold">{{pro.title}}</span> {{pro.area}}</h1> 
+
+                        <p>
+                            <span class="sai-bold">~MANOHAR TRUST </span>{{pro.details}}</p>
+
+                    </div>
+
+                    <div class="col-md-12 fadeIn animated">
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+
+                                <div class="item active">
+
+                                    <img src={{pro.image.url}} alt="">
+
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- /.main-container  -->
+
+
+    {% endblock %}
+
+    {% block script %} 
+
+
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src={% static "assets/js/jquery-1.11.1.min.js"%}><\/script>')
+        </script>
+
+        <!-- Bootsrap javascript file -->
+        <script src={% static "assets/js/bootstrap.min.js"%}></script>
+
+        <!-- PrettyPhoto javascript file -->
+        <script src={% static "assets/js/jquery.prettyPhoto.js"%}></script>
+
+
+
+        <!-- Google map  -->
+        <script src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places" type="text/javascript"></script>
+
+
+        <!-- Template main javascript -->
+        <script src={% static "assets/js/main.js"%}></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l;
+                b[l] || (b[l] =
+                    function() {
+                        (b[l].q = b[l].q || []).push(arguments)
+                    });
+                b[l].l = +new Date;
+                e = o.createElement(i);
+                r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-XXXXX-X');
+            ga('send', 'pageview');
+        </script>
+    {% endblock %}

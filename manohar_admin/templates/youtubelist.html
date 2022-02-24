@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block gallery %}is-active{% endblock  %}
+{% block content %} 
+
+<div class="page-heading text-center">
+
+    <div class="container zoomIn animated">
+
+        <h1 class="page-title">YouTube Videos <span class="title-under"></span></h1>
+        <p class="page-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit Necessitatibus.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="main-container">
+
+    <div class="container gallery fadeIn animated">
+            <div class="row">
+                {% for vid in videos %}
+                <a href="#" data-toggle="modal" data-target="#{{vid.ytid}}" class="col-md-3 col-sm-4 gallery-item newlightbox">
+
+                    <img src="https://img.youtube.com/vi/{{vid.ytid}}/hqdefault.jpg"  class="img-thumbnail newlightbox" alt="">
+                    <span class="on-hover">
+                        <span class="hover-caption">View Image!</span>
+                    </span>
+                </a>
+                {% endfor %}
+            </div>
+
+    </div>
+
+</div>
+
+
+<!--objectives-->
+{% for vid in videos %}
+<div class="modal fade" id="{{vid.ytid}}" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{vid.ytid}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</div>
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+
+{% block script %} 
+<!--  Scripts
+================================================== -->
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src={% static "assets/js/jquery-1.11.1.min.js"%}><\/script>')
+</script>
+
+<!-- Bootsrap javascript file -->
+<script src={% static "assets/js/bootstrap.min.js"%}></script>
+
+<!-- owl carouseljavascript file -->
+<script src={% static "assets/js/owl.carousel.min.js"%}></script>
+
+<!-- Template main javascript -->
+<script src={% static "assets/js/main.js"%}></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+{% endblock %}
