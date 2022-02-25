@@ -65,6 +65,8 @@ class TeamMate(models.Model):
     facebook = models.CharField(max_length=100,default='facebook-profile-link')
     twitter = models.CharField(max_length=100,default='twitter-profile-link')
     linkedin = models.CharField(max_length=100,default='linkedin-profile-link')
+    def __str__(self):
+        return f'Video - {self.name}'
 
 class MediaPost(models.Model):
     img = models.ImageField(default='default.png',upload_to='media_posts')
@@ -73,7 +75,11 @@ class Contact(models.Model):
     name = models.CharField(max_length=20,default='Name')
     email = models.CharField(max_length=50,default='Email')
     message = models.CharField(max_length=500,default='message')
+    def __str__(self):
+        return f'Video - {self.email}'
 
 class FAQ(models.Model):
     question = models.CharField(max_length=100,default='Question')
     answer = models.CharField(max_length=500,default='Answer')
+    def __str__(self):
+        return f'Video - {self.question}'
