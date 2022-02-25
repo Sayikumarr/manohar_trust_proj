@@ -36,14 +36,14 @@
                         <strong>Manohar Trust</strong> was founded in the year 2017 to contribute towards betterment of the society with a focus on hunger people, child education, holistic child development and women empowerment and to create awareness among youth by spreading quality thoughts to enlighten them.
                     </p>
 
-                    <p>
+                    {% comment %} <p>
                         Our green planet is only one. We have one Creator, and we are said to be guardians of our own kind. Therefore, we must look after each other, care for each other, and love one another. There should be no discrimination against any race, gender, nationality, age and, most importantly, religion. We may be different but we are one
 
                     </p>
 
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi pariatur, voluptatum molestiae voluptas ducimus tempora numquam eligendi quos, quia aut quidem et, odio deleniti amet natus accusamus fugit! Temporibus, tenetur.
-                    </p>
+                    </p> {% endcomment %}
 
                     
 
@@ -198,6 +198,35 @@
             </div>
 
         </div>
+
+        <div class="section-home our-causes animate-onscroll fadeIn">
+
+            <div class="container">
+    
+                <new><h2 style="font-weight: bold;" class="text-center title-style-new">FAQ's</h2>
+                <p  class="text-center reason-subtitle" >Frequently Asked Questions</p>
+                <span class="title-under"></span><br></new>
+    
+                <div class="container-fluid">
+                            <div style="
+                                padding-top: 8px;
+                                padding-bottom: 8px;" class="card text-center sai-style">
+                                <div class="card-body">
+                                {% for faq in faqs %}
+                                <h4><span class="pl-3">{{forloop.counter}}. {{faq.question}}</span><br></h4>
+                                <h5 class="reason-subtitle">{{faq.ans}}</h5>
+                                <hr>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                   
+                </div>
+    
+            </div>
+    
+        </div>
+        <!-- /.our-causes -->
 
     
 

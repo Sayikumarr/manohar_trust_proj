@@ -533,7 +533,7 @@ a:active {
 ================================= */
 
 .page-heading {
-    background: url('../images/heading-bg.jpg?1428795369') no-repeat center;
+    /* background: url('../images/heading-bg.jpg?1428795369') no-repeat center; */
     background-size: cover;
     min-height: 190px;
     color: #fff;
@@ -863,7 +863,7 @@ form .alert {
     width: 46px;
     height: 48px;
     position: absolute;
-    background: url('../images/icons/zoom-icon.png?1428101315');
+    /* background: url('../images/icons/zoom-icon.png?1428101315'); */
     top: 50%;
     left: 50%;
     margin-top: -23px;

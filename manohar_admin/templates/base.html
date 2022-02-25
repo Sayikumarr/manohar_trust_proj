@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 {% load static %}
 
-        {% block style %} {% endblock %}
+        {% block style %} 
+        <style>
+            .page-heading {
+                background: url('{%static "assets/images/heading-bg.jpg" %}') no-repeat center;
+                }
+                
+            .newlightbox .on-hover:before {
+                background: url('{%static "assets/images/icons/zoom-icon.png" %}');
+                }
+        </style>   
+        
+    
+        {% endblock %}
         <meta charset="utf-8">
         <title>MANOHAR TRUST</title>
         <meta name="description" content="">
@@ -61,16 +73,16 @@
                             <ul class="list-unstyled list-inline header-social">
 
                                 <li>
-                                    <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                    <a href="https://www.facebook.com/manohartrust"> <i class="fa fa-facebook"></i> </a>
                                 </li>
                                 <li>
-                                    <a href="#"> <i class="fa fa-twitter"></i> </a>
+                                    <a href="https://twitter.com/manohar_trust"> <i class="fa fa-twitter"></i> </a>
                                 </li>
                                 <li>
                                     <a href="#"> <i class="fa fa-google"></i> </a>
                                 </li>
                                 <li>
-                                    <a href="#"> <i class="fa fa-youtube"></i> </a>
+                                    <a href="https://www.youtube.com/channel/UCxpQOaRwJBQ3Ipko0g54VDQ"> <i class="fa fa-youtube"></i> </a>
                                 </li>
                                 <li>
                                     <a href="#"> <i class="fa fa fa-pinterest-p"></i> </a>
@@ -210,8 +222,8 @@
 
                                     <div class="footer-form">
 
-                                        <form action={% static "php/mail.php" %} class="ajax-form">
-
+                                        <form method='POST' class="contact-form ajax-form">
+                                            {% csrf_token %}
                                             <div class="form-group">
                                                 <input type="text" name="name" class="form-control" placeholder="Name" required>
                                             </div>
@@ -224,23 +236,17 @@
                                                 <textarea name="message" class="form-control" placeholder="Message" required></textarea>
                                             </div>
 
-                                            <div class="form-group alerts">
-
-                                                <div class="alert alert-success" role="alert">
-
-                                                </div>
-
-                                                <div class="alert alert-danger" role="alert">
-
-                                                </div>
-
-                                            </div>
 
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                                <button type="submit" class="btn btn-submit pull-right" data-toggle="modal" data-target="#contactpopup">Send message</button>
                                             </div>
 
                                         </form>
+                                        {% for text in alert %}
+                                                <div class="card" style="width: 18rem;color:red; font-weight: bold;">
+                                                    <h4 class="card-header text-center ">{{text}}</h4>
+                                                </div>
+                                            {% endfor %}
 
                                     </div>
 
@@ -270,6 +276,29 @@
         </div>
 
     </footer>
+
+
+    <div class="modal fade" id="contactpopup" tabindex="-1" role="dialog" aria-labelledby="contactpopupLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="contactpopupLabel">SENT!</h4>
+                </div>
+                <div class="modal-body">
+    
+                        <ul>
+                            <li>Your Message and Details Successfully sent!</li>
+                        </ul>
+                        
+    
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
     <!-- main-footer -->
     {% block donate %} {% endblock donate %}
     {% block script %} {% endblock %}

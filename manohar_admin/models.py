@@ -73,3 +73,7 @@ class Contact(models.Model):
     name = models.CharField(max_length=20,default='Name')
     email = models.CharField(max_length=50,default='Email')
     message = models.CharField(max_length=500,default='message')
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=100,default='Question')
+    answer = models.CharField(max_length=500,default='Answer')
