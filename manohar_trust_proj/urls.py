@@ -25,7 +25,7 @@ admin.site.index_title = "Welcome to Manohar Trust Dashboard"
 urlpatterns = [
     path('admin-portal/', admin.site.urls),
     path('',include('manohar_admin.urls')),
-    path('/captcha',include("captcha.urls")),
+    path('captcha',include("captcha.urls")),
 ]
 
 
