@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9s@zjj1wn*6&m6+v$#!5@o1(1=cx3$+y=%sdev27#jetu6a%-v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://manohar-trust.herokuapp.com','manohartrust.org','manohar-trust.herokuapp.com','https://manohartrust.org','127.0.0.1']
+ALLOWED_HOSTS = ['https://manohar-trust.herokuapp.com','manohartrust.org','manohar-trust.herokuapp.com','https://manohartrust.org','127.0.0.1','192.168.0.113']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'manohar_admin',
     'sorl.thumbnail',
-    'django_heroku'
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'manohar_trust_proj.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -86,17 +86,27 @@ DATABASES = {
     }
 }
 
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'manohar_trust',
-        'HOST':'database-2.cf6kcwxleuyz.ap-south-1.rds.amazonaws.com',
-        'PORT':'3306',
-        'USER':'sayikumarr',
-        'PASSWORD':'saiabhi19',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'manobxbu_manohar_trust',
+#         'USER': 'manobxbu_manohar',
+#         'PASSWORD': 'Manohar@123',
+#         'HOST': '162.0.232.167',
+#         'PORT': '3306',
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'manohar_trust',
+#         'HOST':'database-2.cf6kcwxleuyz.ap-south-1.rds.amazonaws.com',
+#         'PORT':'3306',
+#         'USER':'sayikumarr',
+#         'PASSWORD':'saiabhi19',
+#     }
+# }
 
 
 # Password validation
@@ -148,15 +158,15 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AWS_ACCESS_KEY_ID = 'AKIA4SURJDLXP6FAROXX'
-AWS_S3_REGION_NAME = 'ap-south-1'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'a2sl'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_ACCESS_KEY_ID = 'AKIA4SURJDLXP6FAROXX'
+# AWS_S3_REGION_NAME = 'ap-south-1'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'a2sl'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 

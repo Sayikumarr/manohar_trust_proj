@@ -18,6 +18,14 @@
         <title>MANOHAR TRUST</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta charset="utf-8">
+        <meta property="og:title" content="Manohar Trust" />
+        <meta property="og:url" content="https://manohartrust.org/" />
+        <meta property="og:description" content="Was founded in the year 2017 to contribute towards betterment of the society with a focus on hunger people, child education, holistic child development and women empowerment and to create awareness among youth by spreading quality thoughts to enlighten them.">
+        <meta property="og:image" content={% static "assets/images/logo.png"%}>
+        <link rel="icon" type="image/x-icon" href={% static "assets/images/logo.png"%}>
+
         <!-- Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
@@ -62,7 +70,7 @@
 
                             <ul class="list-unstyled list-inline header-contact">
                                 <li> <i class="fa fa-phone"></i> <a href="tel:+919441550710">+91 9441550710 </a> </li>
-                                <li> <i class="fa fa-envelope"></i> <a href="mailto:team@manohartrust.org">team@manohartrust.org</a> </li>
+                                <li> <i class="fa fa-envelope"></i> <a href="mailto:manoharsevasamithi@manohartrust.org">manoharsevasamithi@manohartrust.org</a> </li>
                             </ul>
                             <!-- /.header-contact  -->
 
@@ -73,19 +81,19 @@
                             <ul class="list-unstyled list-inline header-social">
 
                                 <li>
-                                    <a href="https://www.facebook.com/manohartrust"> <i class="fa fa-facebook"></i> </a>
+                                    <a href="https://www.facebook.com/manohartrust" target="_blank"> <i class="fa fa-facebook"></i> </a>
                                 </li>
                                 <li>
-                                    <a href="https://twitter.com/manohar_trust"> <i class="fa fa-twitter"></i> </a>
+                                    <a href="https://twitter.com/manohar_trust" target="_blank"> <i class="fa fa-twitter"></i> </a>
                                 </li>
                                 <li>
-                                    <a href="#"> <i class="fa fa-google"></i> </a>
+                                    <a href="https://in.linkedin.com/in/manohar-trust-46a6261a3" target="_blank"> <i class="fa fa-linkedin"></i> </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.youtube.com/channel/UCxpQOaRwJBQ3Ipko0g54VDQ"> <i class="fa fa-youtube"></i> </a>
+                                    <a href="https://www.youtube.com/channel/UCxpQOaRwJBQ3Ipko0g54VDQ" target="_blank"> <i class="fa fa-youtube"></i> </a>
                                 </li>
                                 <li>
-                                    <a href="#"> <i class="fa fa fa-pinterest-p"></i> </a>
+                                    <a href="https://www.instagram.com/manohartrust/"  target="_blank"> <i class="fa fa fa-instagram"></i> </a>
                                 </li>
                             </ul>
                             <!-- /.header-social  -->
@@ -112,7 +120,7 @@
 
                   </button>
 
-                        <a class="navbar-brand" href="index.html"><span style="vertical-align: inherit;"><img src={% static "assets/images/logo.png"%} alt="" height="38">MANOHAR TRUST</span>
+                        <a class="navbar-brand" href="/"><span style="vertical-align: inherit;"><img src={% static "assets/images/logo.png"%} alt="" height="38">MANOHAR TRUST</span>
                         </a>
 
                     </div>
@@ -191,13 +199,13 @@
                             <div class="footer-content">
                                 <table class='table table-style-1 table-responsive'>
                                     <tr>
-                                      <td><a  href="https://twitter.com/manohar_trust"><i class="bi bi-twitter"></i> Twitter</a></td>
-                                      <td><a  href="https://www.facebook.com/manohartrust"><i class="bi bi-facebook"></i> Facebook</a></td>
-                                      <td><a  href="https://www.youtube.com/channel/UCxpQOaRwJBQ3Ipko0g54VDQ"><i class="bi bi-youtube"></i> Youtube</a></td>
+                                      <td><a  href="https://twitter.com/manohar_trust"  target="_blank"><i class="bi bi-twitter"></i> Twitter</a></td>
+                                      <td><a  href="https://www.facebook.com/manohartrust" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></td>
+                                      <td><a  href="https://www.youtube.com/channel/UCxpQOaRwJBQ3Ipko0g54VDQ" target="_blank"><i class="bi bi-youtube"></i> Youtube</a></td>
                                     </tr>
                                     <tr>
-                                      <td><a  href="https://in.linkedin.com/in/manohar-trust-46a6261a3"><i class="bi bi-linkedin"></i> Linkedin</a></td>
-                                      <td><a  href="https://www.instagram.com/manohartrust/"><i class="bi bi-instagram"></i> Instagram</a></td>
+                                      <td><a  href="https://in.linkedin.com/in/manohar-trust-46a6261a3" target="_blank"><i class="bi bi-linkedin"></i> Linkedin</a></td>
+                                      <td><a  href="https://www.instagram.com/manohartrust/" target="_blank"><i class="bi bi-instagram"></i> Instagram</a></td>
                                      
                                     </tr>
                                   </table>
@@ -234,6 +242,10 @@
 
                                             <div class="form-group">
                                                 <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                               {{captcha.captcha}}
                                             </div>
 
 

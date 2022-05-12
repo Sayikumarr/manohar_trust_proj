@@ -3,7 +3,9 @@ boto3==1.20.26
 botocore==1.23.54
 Django==4.0.2
 django-storages==1.12.3
+gunicorn==20.1.0
 jmespath==0.10.0
+mysqlclient==2.1.0
 Pillow==9.0.1
 python-dateutil==2.8.2
 s3transfer==0.5.1
@@ -12,6 +14,4 @@ sorl-thumbnail==12.8.0
 sqlparse==0.4.2
 tzdata==2021.5
 urllib3==1.26.8
-gunicorn
-django-heroku
-mysqlclient
+whitenoise==6.0.0

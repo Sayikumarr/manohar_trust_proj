@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve 
 admin.site.site_header = "Manohar Trust Admin"
 admin.site.site_title = "Manohar Trust Admin Portal"
 admin.site.index_title = "Welcome to Manohar Trust Dashboard"
@@ -24,6 +25,7 @@ admin.site.index_title = "Welcome to Manohar Trust Dashboard"
 urlpatterns = [
     path('admin-portal/', admin.site.urls),
     path('',include('manohar_admin.urls')),
+    path('/captcha',include("captcha.urls")),
 ]
 
 

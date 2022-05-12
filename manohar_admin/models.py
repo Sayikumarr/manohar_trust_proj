@@ -1,6 +1,8 @@
 from django.db import models
 from datetime import datetime
 
+from django.forms import CharField
+
 
 # Create your models here.
 class Poster(models.Model):
@@ -29,8 +31,9 @@ class Eventschedule(models.Model):
 class Program(models.Model):
     title = models.CharField(max_length=50,default='Program Title')
     area = models.CharField(max_length=50,default='Program Area')
-    details = models.CharField(max_length=500,default='Program Details')
+    details = models.TextField(max_length=1000,default='Program Details')
     image = models.ImageField(default='default.png',upload_to='program_pics')
+    image_description = models.CharField(max_length=500,default='image description')
     def __str__(self):
         return f'Program - {self.title}'
 
