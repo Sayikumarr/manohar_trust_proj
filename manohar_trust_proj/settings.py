@@ -170,3 +170,9 @@ STATICFILES_DIRS = [
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'manohartrust.org'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'team@manohartrust.org'
+EMAIL_HOST_PASSWORD = 'ZpT%L~DJ2jb0'

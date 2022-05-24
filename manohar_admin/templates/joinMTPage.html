@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block home %}is-active{% endblock home %}
+{% block content %} 
+<div class="container">
+<div class="jumbotron ">
+    <h1>Become a Volunteer/Sponser/Supporter</h1>
+    <hr>
+    {% for text in alert %}
+                    <div class="card" style="width: 18rem;color:red; font-weight: bold;">
+                        <h4 class="card-header text-center ">{{text}}</h4>
+                    </div>
+
+    {% endfor %}
+<form method='POST' class="contact-form">
+    {% csrf_token %}
+    <div class="mb-3 ">
+      <label for="exampleInputName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="exampleInputName" name='name' placeholder='Full Name' required>
+    </div>
+    <br>  <div class="mb-3">
+      <label for="exampleInputFName" class="form-label">Father Name</label>
+      <input type="text" class="form-control" id="exampleInputFName" name='fname' placeholder='Father Name' required>
+    </div>
+    <br>   <div class="mb-3">
+        <label for="exampleInputMName" class="form-label">Mother Name</label>
+        <input type="text" class="form-control" id="exampleInputMName" name='mname' placeholder='Mother Name' required>
+    </div>
+    <br>    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name='email' placeholder='Email' required>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="exampleInputPhone" class="form-label">Contact Number</label>
+        <input type="tel" class="form-control" id="exampleInputPhone" name='phone' placeholder='Contact Number' required>
+        <div id="emailHelp" class="form-text">We'll never share your Contact Number with anyone else.</div>
+    </div>
+    <br><div class="mb-3">
+        <label for="exampleInputWANumber" class="form-label">WhatsApp Number</label>
+        <input type="tel" class="form-control" id="exampleInputWANumber" name='waphone' placeholder='WhatsApp Number' required>
+        <div id="emailHelp" class="form-text">We'll never share your WhatsApp Number with anyone else.</div>
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="bloodgroup" class="form-label">Blood Group</label>
+
+        <select name="bloodg" id="bloodgroup">
+          <option class="item" value="A+">A+</option>
+          <option class="item" value="A-">A-</option>
+          <option class="item" value="B+">B+</option>
+          <option class="item" value="B-">B-</option>
+          <option class="item" value="O+">O+</option>
+          <option class="item" value="O-">O-</option>
+          <option class="item" value="AB+">AB+</option>
+          <option class="item" value="AB-">AB-</option>
+        </select> 
+    </div>
+    <br> <div class="form-floating">
+        <label for="CAddress">Present Address</label>
+        <textarea class="form-control" name="CAddress" placeholder="Present Address" id="CAddress" required style="height: 100px"></textarea>
+        
+    </div>
+    <br> <div class="form-floating">
+        <label for="PAddress">Permenant Address</label>
+        <textarea class="form-control" name="PAddress" placeholder="Permenant Address" id="PAddress" required style="height: 100px"></textarea>
+        
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="profession" class="form-label">Profession</label>
+        <input type="text" class="form-control" id="profession" name='profession' placeholder='Tell us What you do.' required>
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="serve" class="form-label">Willing to serve in</label>
+
+        <select id="serve" name="serve" style="width: 100%;">
+            <option value="Weekends">Weekends</option>
+            <option value="Weekdays">Weekdays</option>
+            <option value="Anytime">Anytime</option>
+        </select>
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="interested" class="form-label">Choose the work you are interested</label>
+
+        <select id="interested" name="interested" style="width: 100%;">
+            <option value="Social Media">Social Media</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Web Design">Web Design</option>
+            <option value="Fund Raising">Fund Raising</option>
+            <option value="Data Entry">Data Entry</option>
+            <option value="Poster Design">Poster Design</option>
+            <option value="Training">Training</option>
+            <option value="Social Volunteering">Social Volunteering</option>
+            <option value="Event Planning and Managing">Event Planning and Managing</option>
+            <option value="Photography">Photography</option>
+            <option value="Videography">Videography</option>
+            </select>
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="skills" class="form-label">Special Skills if any</label>
+        <input type="text" class="form-control" id="skills" name='skills' placeholder='Your Answer...' required>
+    </div>
+    <br> <div class="form-floating">
+        <label for="Message">Your Message</label>
+        <textarea class="form-control" name="Message" placeholder="Your Message" id="Message" required style="height: 100px"></textarea>
+        
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="Captcha" class="form-label">Captcha:0110</label>
+        <input type="text" class="form-control" id="Captcha" name='Captcha' placeholder='Enter Captcha Given Above...' required>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary pull-right" value="Send message"/>
+    </div>
+  </form>
+</div>
+</div>
+{% endblock %}
+
+{% block script %} 
+    <script type="text/javascript" src={% static "assets/js/lightbox-plus-jquery.min.js" %}></script>
+        
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src={% static "assets/js/jquery-1.11.1.min.js"%}><\/script>')
+        </script>
+
+        <!-- Bootsrap javascript file -->
+        <script src={% static "assets/js/bootstrap.min.js"%}></script>
+
+        <!-- PrettyPhoto javascript file -->
+        <script src={% static "assets/js/jquery.prettyPhoto.js"%}></script>
+
+        <!-- Template main javascript -->
+        <script src={% static "assets/js/main.js"%}></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l;
+                b[l] || (b[l] =
+                    function() {
+                        (b[l].q = b[l].q || []).push(arguments)
+                    });
+                b[l].l = +new Date;
+                e = o.createElement(i);
+                r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-XXXXX-X');
+            ga('send', 'pageview');
+        </script>
+    {% endblock %}

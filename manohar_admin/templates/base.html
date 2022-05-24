@@ -23,7 +23,7 @@
         <meta property="og:title" content="Manohar Trust" />
         <meta property="og:url" content="https://manohartrust.org/" />
         <meta property="og:description" content="Was founded in the year 2017 to contribute towards betterment of the society with a focus on hunger people, child education, holistic child development and women empowerment and to create awareness among youth by spreading quality thoughts to enlighten them.">
-        <meta property="og:image" content={% static "assets/images/logo.png"%}>
+        <meta property="og:image" content="https://manohartrust.org/static/assets/images/logo.png">
         <link rel="icon" type="image/x-icon" href={% static "assets/images/logo.png"%}>
 
         <!-- Fonts -->
@@ -230,7 +230,7 @@
 
                                     <div class="footer-form">
 
-                                        <form method='POST' class="contact-form ajax-form">
+                                        <form method='POST' class="contact-form">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <input type="text" name="name" class="form-control" placeholder="Name" required>

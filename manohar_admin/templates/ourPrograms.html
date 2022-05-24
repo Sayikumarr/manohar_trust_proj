@@ -9,7 +9,7 @@
 
             <h1 class="page-title">Our Programs <span class="title-under"></span></h1>
             <p class="page-description">
-                These are Some Programs Conducted by MANOHAR TRUST
+                {% comment %} These are Some Programs Conducted by MANOHAR TRUST {% endcomment %}
             </p>
 
         </div>
@@ -24,9 +24,9 @@
 
                     <div class="col-md-12 fadeIn animated">
 
-                        <h1 class="page-title"><span class="sai-bold">{{pro.title}}</span> {{pro.area}}</h1> 
+                        <h1 class="page-title" style="color:{{pro.areacol}}"><span class="sai-bold" style="color:{{pro.titlecol}}">{{pro.title}}</span> {{pro.area}}</h1> 
 
-                        <p>
+                        <p style="color:{{pro.detailscol}}">
                             <span class="sai-bold">~MANOHAR TRUST </span>{{pro.details}}
                         </p>
 

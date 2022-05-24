@@ -26,7 +26,7 @@
 
                         <h2 class="carousel-title bounceInDown animated slow">Because they need your help</h2>
                         <h4 class="carousel-subtitle bounceInUp animated slow ">Do not let them down</h4>
-                        <a href="https://pmny.in/SIJdMv6raKPd" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow" >DONATE NOW</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#donateModal" >DONATE NOW</a>
                         {% comment %} data-toggle="modal" data-target="#donateModal" {% endcomment %}
                     </div>
                     <!-- /.carousel-caption -->
@@ -490,7 +490,7 @@
                         
                        </ul>
 
-                <a href="https://pmny.in/SIJdMv6raKPd" class="btn btn-primary" > Donate Now! </a>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#donateModal" > Donate Now! </a>
                     
 
             </div>
@@ -519,73 +519,8 @@
                 </div>
                 <div class="modal-body">
 
-                    <form class="form-donation">
-
-                        <h3 class="title-style-1 text-center">Thank you for your donation <span class="title-under"></span> </h3>
-
-                        <div class="row">
-
-                            <div class="form-group col-md-12 ">
-                                <input type="text" class="form-control" id="amount" placeholder="AMOUNT(€)">
-                            </div>
-
-                        </div>
-
-
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control" name="firstName" placeholder="First name*">
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control" name="lastName" placeholder="Last name*">
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control" name="email" placeholder="Email*">
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control" name="phone" placeholder="Phone">
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="form-group col-md-12">
-                                <input type="text" class="form-control" name="address" placeholder="Address">
-                            </div>
-
-                        </div>
-
-
-                        <div class="row">
-
-                            <div class="form-group col-md-12">
-                                <textarea cols="30" rows="4" class="form-control" name="note" placeholder="Additional note"></textarea>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="form-group col-md-12">
-                                <button type="submit" class="btn btn-primary pull-right" name="donateNow">DONATE NOW</button>
-                            </div>
-
-                        </div>
-
-
-
-
-
-                    </form>
-
+                    <img style="height: 100%;width: 100%;" src={% static "assets/images/1652444234043_114192991000047@cnrb.png"%} >
+                    <a class="btn btn-primary btn-lg btn-block active" href="upi://pay?pa=114192991000047@cnrb&pn=MANOHAR TRUST&mc=8398&tr=1234567887654321&tn=Pay to Merchant&am=0&mam=0&cu=INR&refUrl=http://npci.org/upi/schema/" role="button">Click Here to pay via UPI Apps</a>
                 </div>
             </div>
         </div>

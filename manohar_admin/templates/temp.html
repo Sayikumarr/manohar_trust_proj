@@ -1,0 +1,108 @@
+<html>
+<head>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://results.jntuh.ac.in/js/resultsearch.js">
+    </script>
+   <script language="JavaScript">
+
+ document.onkeypress = function (event) {
+     event = (event || window.event);
+     if (event.keyCode == 123) {
+        //alert('No F-12');
+         return false;
+     }
+ }
+ document.onmousedown = function (event) {
+     event = (event || window.event);
+     if (event.keyCode == 123) {
+         //alert('No F-keys');
+         return false;
+     }
+ }
+document.onkeydown = function (event) {
+     event = (event || window.event);
+     if (event.keyCode == 123) {
+         //alert('No F-keys');
+         return false;
+     }
+ }
+ 
+function clickIE() {if (document.all) {(message);return false;}} 
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) { 
+if (e.which==2||e.which==3) {(message);return false;}}} 
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;} 
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;} 
+document.oncontextmenu=new Function("return false"); 
+</script>
+<script type="text/javascript" src="http://results.jntuh.ac.in/js/fkeys.js">
+    </script>
+</head>
+</head>
+<body>
+<form id="myForm" name="searchResult" onsubmit="return formvalidation()" method="post">
+<br>
+<br>
+<br>
+		<div class="CommentBox" align="center">
+		
+					
+					
+					<input type="hidden" name="degree" value="btech">
+					<input type="hidden" name="examCode" value="1550">
+					<input type="hidden" name="etype" value="r17">
+					<input type="hidden" name="result" value="null">
+					<input type="hidden" name="grad" value="null">
+					<input type="hidden" name="type" value="intgrade">
+					
+					<!-- <label color="green">Degree:</label>
+					
+					 <select name='degree'
+						onchange="getExamsList(this.value)">
+							<option value="-1">Select</option> 
+							<option value="btech">B.Tech</option>
+							<option value="bpharmacy">B.Pharmacy</option> 
+							</select> -->
+					<br>
+					<br>
+			<font color="red"> <div id="une"> </div> </font><table style="width: 55%; height: 55%; text-align: left; float: center; background-color: #d0e4fe; border-style: outset; border-color: black;">
+					
+				
+				<tbody><tr>
+					<td>Enter HallTicket Number</td>
+					<td><input type="text" name="htno" required="required" onkeyup="capitalizeMe(this);" id="htno" min="1" max="10">
+					</td><td><div style="color: #FF0000;"></div></td>
+					<td>
+				</td></tr>
+				<tr>
+					<td>Enter Date of Birth</td>
+					<td><input type="text" required="" id="datepicker" value="" class="hasDatepicker"></td>
+					<td>YYYY/MM/DD</td>
+					
+				</tr><tr>
+				</tr><tr>
+					<td>Please enter this Captcha code in below TextBox<br>
+					</td>
+
+					<td><input type="text" id="txtCaptcha" style="color:  #4e2016 ; text-align: center; border: darkline; font-weight: bold; font-family: Modern" disabled="disabled"></td>
+
+
+					<td><input type="button" id="btnrefresh" value="Refresh" onclick="DrawCaptcha();"><br></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="text" id="txtInput" required="required">
+					</td><td><input type="submit" value="Submit"><br></td>
+					<!-- <td><input id="Button1" type="button" value="Check"
+						onclick="ValidCaptcha();"/><br /></td> -->
+				</tr>
+				
+			</tbody></table>
+		<br> 
+		</div>
+	<!-- <input type="hidden" name="examCode"/> -->
+	</form>
+	</body></html>
