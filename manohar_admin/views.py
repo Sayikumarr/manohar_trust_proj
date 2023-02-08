@@ -44,7 +44,7 @@ def about_view(request):
     return render(request,'about.html',{'teammates':teammates,'faqs':faqs,'captcha':captcha})
 
 def gallery_view(request):
-    pics = Gallery_pic.objects.all()
+    pics = Gallery_pic.objects.all().order_by("-id")
     captcha=captchaForm()
     if request.method == 'POST':
         alert =[]
@@ -62,7 +62,7 @@ def gallery_view(request):
     return render(request,'gallery.html',{'pics':pics,'captcha':captcha})
 
 def youtubelist_view(request):
-    video = YoutubeVideo.objects.all()
+    video = YoutubeVideo.objects.all().order_by("-id")
     captcha=captchaForm()
     if request.method == 'POST':
         alert =[]
@@ -97,7 +97,7 @@ def contact_view(request):
     return render(request,'contact.html',{'captcha':captcha})
 
 def mediaCoverage_view(request):
-    mediaposts = MediaPost.objects.all()
+    mediaposts = MediaPost.objects.all().order_by("-id")
     captcha=captchaForm()
     if request.method == 'POST':
         alert =[]
@@ -115,7 +115,7 @@ def mediaCoverage_view(request):
     return render(request,'mediacoverage.html',{'mediaposts':mediaposts,'captcha':captcha})
 
 def ourPrograms_view(request):
-    programs = Program.objects.all()
+    programs = Program.objects.all().order_by("-id")
     captcha=captchaForm()
     if request.method == 'POST':
         alert =[]

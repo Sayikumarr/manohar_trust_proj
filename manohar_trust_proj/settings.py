@@ -168,7 +168,13 @@ STATICFILES_DIRS = [
 # AWS_DEFAULT_ACL = None
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+'''
+DEFAULT_FILE_STORAGE = "django_storage_webdav.WebDavStorage"
 
+STORAGE_WEBDAV_URL = " http://premium87.web-hosting.com"
+STORAGE_WEBDAV_USERNAME = "sayikumar@manohartrust.org"
+STORAGE_WEBDAV_PASSWORD = "saiabhi@19"
+'''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'manohartrust.org'
