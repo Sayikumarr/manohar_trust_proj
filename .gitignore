@@ -134,7 +134,9 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
+media.zip
+media/
+*.sqlite3
 # Pyre type checker
 .pyre/
 
