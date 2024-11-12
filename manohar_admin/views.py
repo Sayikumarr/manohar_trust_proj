@@ -198,3 +198,29 @@ def temp(request):
         print(request.body)
         return render(request,'temp.html')
     return render(request,'temp.html')
+
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics
+from .serializers import JoinMTSerializer, ContactSerializer
+from .models import JoinMT, Contact
+
+class ProtectedView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({"message": "You are authenticated!"})
+
+
+class JoinMTListAPIView(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = JoinMT.objects.all().order_by('-id')
+    serializer_class = JoinMTSerializer
+
+
+class ContactListAPIView(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = Contact.objects.all().order_by('-id')
+    serializer_class = ContactSerializer

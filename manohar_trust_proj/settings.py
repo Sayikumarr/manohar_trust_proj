@@ -42,9 +42,12 @@ INSTALLED_APPS = [
     'manohar_admin',
     'sorl.thumbnail',
     'captcha',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
+    'manohar_trust_proj.cors_exempt_middleware.BypassAllowedHostsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

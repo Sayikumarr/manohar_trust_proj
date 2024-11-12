@@ -18,6 +18,11 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve 
+
+from rest_framework.authtoken.views import obtain_auth_token
+from manohar_admin.views import ProtectedView, JoinMTListAPIView, ContactListAPIView
+
+
 admin.site.site_header = "Manohar Trust Admin"
 admin.site.site_title = "Manohar Trust Admin Portal"
 admin.site.index_title = "Welcome to Manohar Trust Dashboard"
@@ -26,6 +31,10 @@ urlpatterns = [
     path('admin-portal/', admin.site.urls),
     path('',include('manohar_admin.urls')),
     path('captcha',include("captcha.urls")),
+    path('saisync/token/', obtain_auth_token, name='api_token_auth'),
+    path('saisync/protected/', ProtectedView.as_view(), name='protected_view'),
+    path('saisync/appointments/', JoinMTListAPIView.as_view(), name='appointment_view'),
+    path('saisync/contacts/', ContactListAPIView.as_view(), name='contact_view'),
 ]
 
 
