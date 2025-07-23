@@ -79,6 +79,8 @@ def youtubelist_view(request):
         return render(request,'youtubelist.html',{'videos':video,'alert':alert,"captcha":captcha})
     return render(request,'youtubelist.html',{'videos':video,'captcha':captcha})
 
+import requests
+
 def contact_view(request):
     captcha=captchaForm()
     if request.method == 'POST':
@@ -91,8 +93,23 @@ def contact_view(request):
             cont = Contact(name=name,email=email,message=message)
             cont.save()
             alert.append("SENT SUCCESSFULLY!")
+            try:
+                # Prepare data to send
+                data_to_send = {
+                        'title': 'New Contact Created',
+                        'body': f'Contact details: {cont}',
+                        'batch': 'manohartrust',
+                        'image': 'https://static.vecteezy.com/system/resources/previews/005/412/356/original/new-update-logo-template-illustration-free-vector.jpg',
+                }
+                    
+                # Send POST request to the external API
+                response = requests.post('https://pavitech.in/tbi/send_notification', json=data_to_send)
+                    
+            except:
+                    pass
         else:
             alert.append("Invalid  Captcha!")
+        
         return render(request,'contact.html',{'alert':alert,'captcha':captcha})
     return render(request,'contact.html',{'captcha':captcha})
 
