@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.views.static import serve 
 
 from rest_framework.authtoken.views import obtain_auth_token
-from manohar_admin.views import ProtectedView, JoinMTListAPIView, ContactListAPIView
+from manohar_admin.views import ProtectedView, JoinMTListAPIView, ContactListAPIView, SaisyncStatsView, ContactDetailAPIView
 
 
 admin.site.site_header = "Manohar Trust Admin"
@@ -35,6 +35,8 @@ urlpatterns = [
     path('saisync/protected/', ProtectedView.as_view(), name='protected_view'),
     path('saisync/appointments/', JoinMTListAPIView.as_view(), name='appointment_view'),
     path('saisync/contacts/', ContactListAPIView.as_view(), name='contact_view'),
+    path('saisync/contacts/<int:pk>/', ContactDetailAPIView.as_view(), name='contact_detail_view'),
+    path('saisync/stats/', SaisyncStatsView.as_view(), name='saisync_stats'),
 ]
 
 
